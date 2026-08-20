@@ -174,7 +174,7 @@ document.getElementById('candForm').addEventListener('submit', async (e) => {
     };
     const r = await fetch('/api/candidates', {
       method: 'POST',
-      headers: {'Content-Type': 'json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(body)
     });
     const res = await r.json();
@@ -210,7 +210,7 @@ document.getElementById('compForm').addEventListener('submit', async (e) => {
     };
     const r = await fetch('/api/companies', {
       method: 'POST',
-      headers: {'Content-Type': 'json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(body)
     });
     const res = await r.json();
