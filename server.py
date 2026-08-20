@@ -1,3 +1,4 @@
+
 import os, json, secrets, hashlib, hmac
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
@@ -34,7 +35,7 @@ def load():
 def save(d):
     with db() as c:
         with c.cursor() as cur:
-            cur.execute('INSERT INTO app_state(id,data) VALUES(1,%s) ON CONFLICT(id) DO UPDATE SET data=EXCLUDED.data,updated_at=NOW()',(json.dumps(d,ensure_ascii=False),))
+            cur.execute('INSERT INTO app_state(id,data) VALUES(1,%s ON CONFLICT(id) DO UPDATE SET data=EXCLUDED.data,updated_at=NOW()',(json.dumps(d,ensure_ascii=False),))
 
 def public_state(d):
     out=dict(d)
@@ -55,6 +56,12 @@ class Handler(SimpleHTTPRequestHandler):
         raw=json.dumps(obj,ensure_ascii=False).encode(); self.send_response(status); self.send_header('Content-Type','application/json; charset=utf-8'); self.send_header('Content-Length',str(len(raw))); self.send_header('Cache-Control','no-store'); self.end_headers(); self.wfile.write(raw)
     def do_GET(self):
         path=urlparse(self.path).path
+        if path=='/' or path=='/index.html':
+            self.path = '/index.html'
+            return super().do_GET()
+        if path=='/admin' or path=='/admin/':
+            self.path = '/admin/index.html'
+            return super().do_GET()
         if path=='/api/public': return self.send_json(public_state(load()))
         if path=='/api/jobs': return self.send_json([j for j in load().get('jobs',[]) if j.get('active') is True])
         if path=='/api/admin/state':
