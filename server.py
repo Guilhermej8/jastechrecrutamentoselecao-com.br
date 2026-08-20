@@ -1,14 +1,14 @@
 import os
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, request, jsonify
 
 app = Flask(__name__, static_folder='.')
 
-# 1. Entrega o SITE PÚBLICO na página inicial (/)
+# 1. SITE PÚBLICO - Abre diretamente na raiz (/)
 @app.route('/')
 def public_site():
     return send_from_directory('.', 'index.html')
 
-# 2. Entrega o PAINEL ADMIN apenas na rota (/admin)
+# 2. ÁREA ADMINISTRATIVA - Abre apenas em (/admin/)
 @app.route('/admin')
 @app.route('/admin/')
 @app.route('/admin/<path:path>')
@@ -17,7 +17,7 @@ def admin_site(path='index.html'):
         return send_from_directory('admin', path)
     return send_from_directory('.', 'index.html')
 
-# 3. Entrega arquivos estáticos (CSS, imagens, JS)
+# 3. Arquivos de apoio (CSS, JS, Imagens)
 @app.route('/<path:path>')
 def static_files(path):
     if os.path.exists(path):
