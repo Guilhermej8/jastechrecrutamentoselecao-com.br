@@ -1,0 +1,16 @@
+JasTech - SITE COMPLETO
+
+index.html          = site público
+admin/index.html    = painel administrativo
+server.py           = servidor e banco de dados
+
+Execute:
+python server.py
+
+Site público:
+http://localhost:8000/
+
+Admin:
+http://localhost:8000/admin/
+
+Não abra os HTMLs diretamente pelo duplo clique. Use o server.py para que o site público e o painel administrativo compartilhem o mesmo banco de dados.

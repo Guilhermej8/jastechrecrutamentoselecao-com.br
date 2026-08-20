@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JasTech | Recrutamento & Seleção</title>
+<style>
+:root{--nav:#071b3a;--blue:#1769ff;--cyan:#23b7ff;--bg:#f5f8fc;--white:#fff;--text:#10213d;--muted:#64748b;--line:#e3e9f1;--danger:#dc3545}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:var(--bg)}a{text-decoration:none;color:inherit}.wrap{width:min(1120px,92%);margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;font-size:26px;color:var(--nav)}.logo span{color:var(--blue)}nav{display:flex;gap:20px;font-weight:700;font-size:14px}.btn{border:0;padding:12px 17px;border-radius:10px;font-weight:800;cursor:pointer;display:inline-block}.primary{background:var(--blue);color:#fff}.light{background:#fff;border:1px solid #d8e0eb;color:var(--nav)}.danger{background:var(--danger);color:#fff}
+.hero{background:linear-gradient(135deg,#061833,#0d3f80);color:#fff;padding:82px 0}.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}.ey{color:#72d8ff;font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.hero h1{font-size:clamp(42px,6vw,67px);line-height:1.03;margin:15px 0;letter-spacing:-2px}.hero p{font-size:18px;color:#dbeafe;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.glass{background:#ffffff12;border:1px solid #ffffff2b;border-radius:20px;padding:24px}.flow div{padding:12px;background:#ffffff10;border-radius:9px;margin:8px 0}.flow b{color:var(--cyan)}
+section{padding:70px 0}.head{text-align:center;max-width:700px;margin:0 auto 35px}.head h2{font-size:38px;margin:0 0 10px}.head p,.card p,.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card,.box,.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}.icon{font-size:26px}.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}.dark{background:var(--nav);color:#fff;border-color:var(--nav)}.dark p{color:#dbeafe}.check{margin:10px 0}.check b{color:var(--cyan)}
+.jobs{display:grid;gap:13px}.availableJobs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
+.jobCompany{font-weight:800;color:var(--blue);margin-bottom:8px;font-size:14px}
+.availableCard .jobDetails{margin-top:8px;line-height:1.45}
+.availableCard .apply-job-btn{margin-top:16px;width:100%}
+.availableCard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 6px 18px #10213d0d}.availableCard h3{margin:0 0 8px;font-size:20px}.availableCard .jobMeta{margin:10px 0}.availableCard .btn{width:100%;text-align:center;margin-top:12px}.availableHeader{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}.availableHeader h3{margin:0;font-size:25px}.availableCount{font-weight:800;color:var(--blue)}.job{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.jobMain{flex:1}.jobTitle{font-size:20px;margin-bottom:8px}.jobMeta{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}.jobDetails{margin-top:10px;color:#475569;line-height:1.55}.jobDetails b{color:#172033}.jobActions{display:flex;flex-direction:column;gap:8px;align-items:stretch;min-width:150px}.jobActions .btn{text-align:center}.jobSelectBox{margin-top:16px;padding:14px;border:1px dashed var(--line);border-radius:12px;background:#f8fafc}.tag{font-size:12px;background:#eaf2ff;color:#1557c8;padding:4px 8px;border-radius:20px;font-weight:800}
+form{display:grid;gap:13px}.row{display:grid;grid-template-columns:1fr 1fr;gap:13px}label{font-size:13px;font-weight:800}input,select,textarea{width:100%;padding:11px;margin-top:6px;border:1px solid #d8e0eb;border-radius:9px;font:inherit}textarea{min-height:100px}.note{font-size:12px;color:var(--muted);background:#f4f7fb;padding:11px;border-radius:8px}.msg{font-weight:700;margin-top:8px}
+.cta{background:linear-gradient(135deg,#0b2b5d,#1769ff);color:#fff;border-radius:22px;padding:38px;display:flex;justify-content:space-between;align-items:center}.cta h2{font-size:32px;margin:0}
+footer{background:#06152d;color:#cbd5e1;padding:38px 0}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.ft{font-weight:900;color:#fff;margin-bottom:9px}
+#admin{display:none;background:#eef5ff;min-height:100vh;padding:55px 0}.adminTop{display:flex;justify-content:space-between;gap:15px;align-items:center}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}.stat{background:#fff;border:1px solid var(--line);padding:18px;border-radius:14px}.stat strong{display:block;color:var(--blue);font-size:29px;margin-top:7px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);font-size:13px}.adminNav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.hidden{display:none!important}.modal{position:fixed;inset:0;background:#06152dbd;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modalBox{background:#fff;border-radius:18px;padding:25px;width:min(460px,100%)}.portalResult{margin-top:18px}.portalHead{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.portalCard{border:1px solid var(--line);border-radius:12px;padding:15px;margin-top:10px;background:#f8fbff}.miniStats{display:flex;gap:8px;flex-wrap:wrap}.miniStats span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px}.miniStats b{color:var(--blue)}
+@media(max-width:800px){nav,header .btn{display:none}.heroGrid,.split,.cards,.foot,.availableJobs{grid-template-columns:1fr}.row,.stats{grid-template-columns:1fr}.job{flex-direction:column;align-items:flex-start}.cta{display:block}.cta .btn{margin-top:18px}.availableHeader{display:block}.availableCount{display:block;margin-top:6px}}
+
+.layoutHero{border-radius:18px;padding:25px;margin-top:14px;background:var(--nav);color:#fff}
+.previewMedia{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.previewMedia img,.previewMedia video{width:100%;max-height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.themeGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.colorBox{display:flex;align-items:center;gap:8px}.colorBox input{width:58px;height:42px;padding:2px}
+@media(max-width:800px){.themeGrid,.previewMedia{grid-template-columns:1fr}}
+.layout-center .heroGrid{grid-template-columns:1fr;text-align:center}.layout-center .hero p{margin-left:auto;margin-right:auto}.layout-center .actions{justify-content:center}.layout-media .heroGrid{grid-template-columns:.8fr 1.2fr}.layout-media #heroMedia{order:2}.pill-buttons .btn{border-radius:999px}.square-buttons .btn{border-radius:3px}.siteMusicPlayer{position:fixed;left:18px;right:18px;bottom:18px;z-index:40;background:#071b3a;color:#fff;border:1px solid #ffffff22;border-radius:16px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:8px 15px;align-items:center;box-shadow:0 10px 30px #0004}.siteMusicInfo{display:flex;gap:10px;align-items:center;min-width:0}.siteMusicInfo b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:55vw}.siteMusicInfo small{display:block;color:#cbd5e1}.siteMusicControls{display:flex;gap:6px}.siteMusicControls button{border:0;background:#ffffff16;color:#fff;border-radius:9px;padding:8px 11px;cursor:pointer}.siteMusicControls .musicPlay{background:#1769ff}.siteMusicProgress{grid-column:1/-1;height:3px;background:#ffffff22;border-radius:99px;overflow:hidden}.siteMusicProgress div{height:100%;width:0;background:#23b7ff}.siteMusicPlayer iframe,.siteMusicPlayer audio{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.siteMusicPlayer.hidden{display:none}@media(max-width:650px){.siteMusicPlayer{left:8px;right:8px;bottom:8px}.siteMusicInfo b{max-width:45vw}}</style>
+</head>
+<body>
+<div id="public">
+<header><div class="wrap nav"><a class="logo" href="#inicio">Jas<span>Tech</span></a><nav><a href="#empresas">Empresas</a><a href="#vagas">Vagas</a><a href="#candidato">Candidatos</a><a href="#contato">Contato</a></nav><a class="btn primary" href="#empresa">Quero contratar</a></div></header>
+
+<section class="hero" id="inicio"><div class="wrap heroGrid"><div><div class="ey">Recrutamento & Seleção</div><h1 id="heroTitle">Conectando talentos às melhores oportunidades.</h1><p id="heroText">A JasTech aproxima empresas e profissionais e organiza as etapas de recrutamento e seleção.</p><div class="actions"><a class="btn primary" href="#empresa">Quero contratar</a><a class="btn light" href="#candidato">Cadastrar currículo</a></div></div><div><div id="heroMedia" class="previewMedia"></div><div class="glass"><h2>Como funciona</h2><div class="flow"><div><b>01</b> Solicitação da vaga</div><div><b>02</b> Divulgação</div><div><b>03</b> Triagem e entrevista</div><div><b>04</b> Encaminhamento</div><div><b>05</b> Contratação</div></div></div></div></div></section>
+
+<section><div class="wrap"><div class="head"><h2>Soluções</h2><p>Serviços para organizar e facilitar contratações.</p></div><div class="cards"><div class="card"><div class="icon">🎯</div><h3>Recrutamento</h3><p>Atração de profissionais.</p></div><div class="card"><div class="icon">📄</div><h3>Triagem</h3><p>Análise dos currículos.</p></div><div class="card"><div class="icon">💬</div><h3>Entrevistas</h3><p>Entrevistas iniciais.</p></div><div class="card"><div class="icon">⭐</div><h3>Seleção</h3><p>Identificação dos melhores perfis.</p></div><div class="card"><div class="icon">👥</div><h3>Banco de talentos</h3><p>Profissionais para futuras oportunidades.</p></div><div class="card"><div class="icon">🚀</div><h3>Processos em massa</h3><p>Várias contratações.</p></div></div></div></section>
+
+<section id="empresas" style="background:#fff"><div class="wrap split"><div class="box dark"><div class="ey">Para empresas</div><h2>Precisa contratar?</h2><p>Envie sua necessidade e receba candidatos alinhados ao perfil.</p><div class="check"><b>✓</b> Divulgação</div><div class="check"><b>✓</b> Triagem</div><div class="check"><b>✓</b> Entrevistas</div><div class="check"><b>✓</b> Encaminhamento</div><a class="btn light" href="#empresa">Solicitar recrutamento</a></div><div class="box"><h2>Serviços</h2><p>Valores podem ser ajustados conforme o processo.</p><p><b>Divulgação:</b> R$ 150–300</p><p><b>Recrutamento:</b> R$ 400–700</p><p><b>Completo:</b> R$ 700–1.200</p><p><b>Em massa:</b> sob orçamento</p></div></div></section>
+
+<section id="vagas"><div class="wrap"><div class="head"><h2>Vagas disponíveis agora</h2><p>As oportunidades abaixo já estão disponíveis para candidatura. Use a busca quando quiser encontrar uma vaga específica.</p></div><div class="availableHeader"><h3>🔔 Oportunidades abertas</h3><span id="availableCount" class="availableCount"></span></div><div id="availableJobs" class="availableJobs"></div><div class="box" style="margin:28px 0 18px"><div class="availableHeader"><h3>🔎 Pesquisar vagas</h3><span class="muted">Filtre por cargo, área ou cidade</span></div><div class="row"><label style="flex:2">Pesquisar<input id="jobSearch" type="search" placeholder="Ex.: vendedor, administrativo, Carandaí..." autocomplete="off"></label><label>Área<select id="jobAreaFilter"><option value="">Todas as áreas</option></select></label><label>Cidade<input id="jobCityFilter" placeholder="Todas as cidades"></label></div><div id="jobSearchCount" class="muted" style="margin-top:8px"></div></div><div id="jobs" class="jobs"></div></div></section>
+
+<section id="candidato"><div class="wrap"><div class="head"><h2>Cadastre seu currículo</h2><p>Entre para o Banco de Talentos JasTech.</p></div><div class="box"><form id="candidateForm"><div class="row"><label>Nome<input name="name" required></label><label>WhatsApp<input name="phone" required></label></div><div class="row"><label>E-mail de acesso<input name="email" type="email" required></label><label>Senha de acesso<input name="password" type="password" minlength="6" required></label></div><div class="row"><label>Cidade<input name="city" required></label><label>Vaga que deseja se candidatar<input name="jobTitleInput" id="candidateJob" list="jobOptions" placeholder="Digite para buscar ou selecione uma vaga" autocomplete="off" required><datalist id="jobOptions"></datalist></label></div><div class="row"><label>Cargo pretendido<input name="role" required></label><label>Área<select name="area"><option>Administrativo</option><option>Vendas</option><option>Atendimento</option><option>Logística</option><option>Produção</option><option>Construção</option><option>Tecnologia</option><option>Saúde</option><option>Educação</option><option>Serviços gerais</option><option>Primeiro emprego</option></select></label></div><label>Experiência<textarea name="experience"></textarea></label><label>Currículo PDF<input name="resume" type="file" accept=".pdf"></label><div class="note">Para esta versão em um único arquivo, os cadastros ficam armazenados neste navegador. Para receber currículos de todos os candidatos pela internet, é necessário backend/banco de dados.</div><button class="btn primary">Salvar currículo</button><div id="candidateMsg" class="msg"></div></form></div></div></section>
+
+<section id="empresa" style="background:#fff"><div class="wrap"><div class="head"><h2>Solicite uma vaga</h2><p>Cadastre a necessidade da sua empresa.</p></div><div class="box"><form id="companyForm"><div class="row"><label>Empresa<input name="company" required></label><label>Responsável<input name="contact" required></label></div><div class="row"><label>WhatsApp<input name="phone" required></label><label>E-mail de acesso<input name="email" type="email" required></label></div><div class="row"><label>Senha de acesso<input name="password" type="password" minlength="6" required></label><label>Confirme a senha<input name="password2" type="password" minlength="6" required></label></div><div class="row"><label>Cargo<input name="role" required></label><label>Quantidade<input name="quantity" type="number" min="1" value="1"></label></div><div class="row"><label>Cidade<input name="city"></label><label>Salário/benefícios<input name="salary"></label></div><label>Requisitos<textarea name="requirements"></textarea></label><button class="btn primary">Salvar solicitação</button><div id="companyMsg" class="msg"></div></form></div></div></section>
+
+<section id="acessos" style="background:#fff"><div class="wrap"><div class="head"><h2>Acompanhe seu processo</h2><p>Empresas e candidatos têm acesso individual às informações do processo seletivo.</p></div><div class="split"><div class="box"><div class="icon">🏢</div><h3>Área da empresa</h3><p>Acompanhe somente as vagas que sua empresa enviou para recrutamento, candidatos inscritos, finalistas indicados e andamento das etapas.</p><form id="companyLoginForm"><label>E-mail<input name="email" type="email" required></label><label>Senha<input name="password" type="password" required></label><button class="btn primary">Entrar como empresa</button><div id="companyLoginMsg" class="msg"></div></form><div id="companyPortal" class="portalResult hidden"></div></div><div class="box"><div class="icon">👤</div><h3>Área do candidato</h3><p>Consulte o andamento da vaga em que você se inscreveu e veja a etapa atual e a mensagem final da JasTech.</p><form id="candidateLoginForm"><label>E-mail<input name="email" type="email" required></label><label>Senha<input name="password" type="password" required></label><button class="btn primary">Entrar como candidato</button><div id="candidateLoginMsg" class="msg"></div></form><div id="candidatePortal" class="portalResult hidden"></div></div></div></div></section>
+
+<section id="contato"><div class="wrap"><div class="cta"><div><h2>Vamos encontrar o profissional certo?</h2><p id="location">Carandaí/MG e região.</p></div><a id="whats" class="btn light" href="https://wa.me/5531999999999" target="_blank">WhatsApp</a></div></div></section>
+<div id="siteMusicPlayer" class="siteMusicPlayer hidden"><div class="siteMusicInfo"><span>🎵</span><div><b id="musicNow">Música</b><small id="musicType">Playlist JasTech</small></div></div><div class="siteMusicControls"><button type="button" onclick="musicPrev()">⏮</button><button type="button" class="musicPlay" id="musicPlayBtn" onclick="musicToggle()">▶</button><button type="button" onclick="musicNext()">⏭</button></div><div class="siteMusicProgress"><div id="musicProgressBar"></div></div><div id="musicStage"></div></div><footer><div class="wrap foot"><div><div class="ft" id="siteName">JasTech Recrutamento & Seleção</div><span id="footerCnpj"></span><br>Conectando talentos às melhores oportunidades.</div><div><div class="ft">Navegação</div><a href="#empresas">Empresas</a><br><a href="#vagas">Vagas</a><br><a href="#candidato">Candidatos</a></div><div><div class="ft">Contato</div><span id="footerLocation">Carandaí/MG e região.</span><br><span id="footerPhone">(31) 99999-9999</span></div></div></footer>
+
+</div>
+
+<script>
+const KEY="jastech_unico_v2";
+const OLD_KEY="jastech_unico_v1";
+const defaults={name:"JasTech Recrutamento & Seleção",cnpj:"",location:"Carandaí/MG e região.",heroTitle:"Conectando talentos às melhores oportunidades.",heroText:"A JasTech aproxima empresas e profissionais e organiza as etapas de recrutamento e seleção.",whatsapp:"5531999999999",primary:"#1769ff",nav:"#071b3a",bg:"#f5f8fc",text:"#10213d",layout:"classic",buttonStyle:"rounded",mediaImage:"",mediaVideo:"",music:[],password:"1234",jobs:[
+{id:1,title:"Auxiliar Administrativo",area:"Administrativo",city:"Carandaí/MG",type:"Efetivo",active:true},
+{id:2,title:"Vendedor(a)",area:"Vendas",city:"Carandaí/MG",type:"Efetivo",active:true},
+{id:3,title:"Auxiliar de Produção",area:"Produção",city:"Região",type:"Efetivo",active:true}],candidates:[],companies:[],stages:["Cadastro recebido","Triagem de currículo","Entrevista JasTech","Finalista / encaminhado para entrevista","Aprovado","Não aprovado"]};
+function data(){
+  try{
+    let raw=localStorage.getItem(KEY);
+    if(!raw){ const old=localStorage.getItem(OLD_KEY); if(old){ raw=old; localStorage.setItem(KEY,old); } }
+    const saved=JSON.parse(raw||"null");
+    if(!saved)return structuredClone(defaults);
+    const d={...structuredClone(defaults),...saved};
+    d.jobs=Array.isArray(saved.jobs)?saved.jobs:structuredClone(defaults.jobs);
+    d.jobs=d.jobs.map(j=>({...j,active:j.active===true||j.active===1||String(j.active).toLowerCase()==="true"}));
+    d.candidates=Array.isArray(saved.candidates)?saved.candidates:[];
+    d.companies=Array.isArray(saved.companies)?saved.companies:[];
+    if(!saved.adminApprovalV2){d.jobs=d.jobs.map(j=>j.companyId&&!j.approvedByAdmin?{...j,active:false,approvedByAdmin:false,processStatus:"Solicitação recebida"}:j);d.adminApprovalV2=true;}
+    d.stages=Array.isArray(saved.stages)&&saved.stages.length?saved.stages:structuredClone(defaults.stages);
+    return d;
+  }catch(e){return structuredClone(defaults)}
+}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function applySite(){
+let d=data();
+siteName.textContent=d.name; heroTitle.textContent=d.heroTitle; heroText.textContent=d.heroText;
+location.textContent=d.location; footerLocation.textContent=d.location; footerPhone.textContent=formatPhone(d.whatsapp);
+footerCnpj.textContent=d.cnpj?("CNPJ: "+d.cnpj):"";
+whats.href="https://wa.me/"+d.whatsapp;
+document.documentElement.style.setProperty("--blue",d.primary||"#1769ff");
+document.documentElement.style.setProperty("--nav",d.nav||"#071b3a");
+document.documentElement.style.setProperty("--bg",d.bg||"#f5f8fc");
+document.documentElement.style.setProperty("--text",d.text||"#10213d");
+document.body.style.background=d.bg||"#f5f8fc";
+document.querySelector(".hero").style.background=`linear-gradient(135deg,${d.nav||"#071b3a"},${d.primary||"#1769ff"})`;
+document.querySelectorAll(".btn.primary").forEach(x=>x.style.background=d.primary||"#1769ff");
+document.body.classList.remove("layout-center","layout-media");
+if(d.layout==="center")document.body.classList.add("layout-center");
+if(d.layout==="media")document.body.classList.add("layout-media");
+document.body.classList.toggle("pill-buttons",d.buttonStyle==="pill");
+document.body.classList.toggle("square-buttons",d.buttonStyle==="square");
+renderMedia();
+}
+function moneyBR(v){return Number(v||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
+function formatPhone(n){n=String(n||"").replace(/\D/g,"");return n.length>=12?"("+n.slice(2,4)+") "+n.slice(4,9)+"-"+n.slice(9):n}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function renderJobs(){
+  const d=data(), activeJobs=Array.isArray(d.jobs)?d.jobs.filter(x=>x.active):[];
+  const featured=document.getElementById("availableJobs");
+  const availableCount=document.getElementById("availableCount");
+  const container=document.getElementById("jobs");
+  if(availableCount)availableCount.textContent=`${activeJobs.length} vaga${activeJobs.length===1?"":"s"} aberta${activeJobs.length===1?"":"s"}`;
+  if(featured){
+    featured.innerHTML=activeJobs.map(x=>{
+      const company=d.companies.find(c=>String(c.id)===String(x.companyId));
+      const companyName=x.company||x.companyName||company?.company||company?.name||"Empresa contratante não informada";
+      const details=[x.city?`<span class="tag">📍 ${esc(x.city)}</span>`:"",x.type?`<span class="tag">💼 ${esc(x.type)}</span>`:"",x.area?`<span class="tag">🏷️ ${esc(x.area)}</span>`:"",x.quantity?`<span class="tag">👥 ${esc(x.quantity)} oportunidade${Number(x.quantity)===1?"":"s"}</span>`:""].join("");
+      return `<article class="availableCard" data-job-id="${esc(x.id)}">
+        <div class="jobCompany">🏢 ${esc(companyName)}</div>
+        <h3>${esc(x.title||x.role||"Vaga")}</h3>
+        <div class="jobMeta">${details}</div>
+        ${x.salary?`<div class="jobDetails"><b>💰 Salário/benefícios:</b> ${esc(x.salary)}</div>`:""}
+        ${x.requirements?`<div class="jobDetails"><b>📋 Requisitos:</b> ${esc(x.requirements)}</div>`:""}
+        ${x.description?`<div class="jobDetails"><b>📝 Descrição:</b> ${esc(x.description)}</div>`:""}
+        ${x.schedule?`<div class="jobDetails"><b>🕐 Horário:</b> ${esc(x.schedule)}</div>`:""}
+        ${x.contractType?`<div class="jobDetails"><b>📄 Contrato:</b> ${esc(x.contractType)}</div>`:""}
+        <button type="button" class="btn primary apply-job-btn" data-job-id="${esc(x.id)}">Candidatar-se</button>
+      </article>`;
+    }).join("") || `<div class="box" style="grid-column:1/-1"><b>Nenhuma vaga publicada no momento.</b><p class="muted">Novas oportunidades aparecerão aqui assim que forem aprovadas pelo administrador.</p></div>`;
+    featured.querySelectorAll('.apply-job-btn').forEach(btn=>btn.addEventListener('click',()=>{
+      const job=activeJobs.find(j=>String(j.id)===String(btn.dataset.jobId));
+      if(job) goToCandidate(job.title);
+    }));
+  }
+  if(!container)return;
+  const q=String(document.getElementById("jobSearch")?.value||"").trim().toLowerCase();
+  const area=String(document.getElementById("jobAreaFilter")?.value||"").trim().toLowerCase();
+  const city=String(document.getElementById("jobCityFilter")?.value||"").trim().toLowerCase();
+  const filtered=activeJobs.filter(x=>{
+    const hay=[x.title,x.area,x.city,x.type,x.salary,x.requirements].map(v=>String(v||"").toLowerCase()).join(" ");
+    return (!q||hay.includes(q))&&(!area||String(x.area||"").toLowerCase()===area)&&(!city||String(x.city||"").toLowerCase().includes(city));
+  });
+  const count=document.getElementById("jobSearchCount");
+  if(count)count.textContent=`${filtered.length} vaga${filtered.length===1?"":"s"} encontrada${filtered.length===1?"":"s"}`;
+  container.innerHTML=filtered.map(x=>{
+    const details=[x.city?`<span class="tag">📍 ${esc(x.city)}</span>`:"",x.type?`<span class="tag">💼 ${esc(x.type)}</span>`:"",x.area?`<span class="tag">🏷️ ${esc(x.area)}</span>`:"",x.quantity?`<span class="tag">👥 ${esc(x.quantity)} vaga${Number(x.quantity)===1?"":"s"}</span>`:""].join("");
+    return `<article class="job"><div class="jobMain"><div class="jobTitle"><strong>${esc(x.title)}</strong></div><div class="jobMeta">${details}</div>${x.salary?`<div class="jobDetails"><b>💰 Salário/benefícios:</b> ${esc(x.salary)}</div>`:""}${x.requirements?`<div class="jobDetails"><b>📋 Requisitos:</b> ${esc(x.requirements)}</div>`:""}<div class="jobDetails"><b>Interessado?</b> Veja os detalhes e candidate-se a esta oportunidade.</div></div><div class="jobActions"><a class="btn primary" href="#candidato" onclick="selectJob(${JSON.stringify(x.title)});return false">Candidatar-se</a><button type="button" class="btn light" onclick="selectJob(${JSON.stringify(x.title)})">Selecionar vaga</button></div></article>`;
+  }).join("")||(q||area||city?'<div class="box"><b>Nenhuma vaga encontrada.</b><p class="muted">Tente outro termo, área ou cidade.</p></div>':'<div class="box">Nenhuma vaga publicada no momento.</div>');
+  renderJobSelect();
+}
+function setupJobSearch(){
+  const input=document.getElementById("jobSearch"), area=document.getElementById("jobAreaFilter"), city=document.getElementById("jobCityFilter");
+  if(input&&!input.dataset.ready){input.dataset.ready="1";input.addEventListener("input",renderJobs)}
+  if(city&&!city.dataset.ready){city.dataset.ready="1";city.addEventListener("input",renderJobs)}
+  if(area&&!area.dataset.ready){area.dataset.ready="1";area.addEventListener("change",renderJobs)}
+  const areas=[...new Set(data().jobs.filter(j=>j.active&&j.area).map(j=>j.area))].sort((a,b)=>String(a).localeCompare(String(b)));
+  if(area){const current=area.value;area.innerHTML='<option value="">Todas as áreas</option>'+areas.map(a=>`<option value="${esc(a)}">${esc(a)}</option>`).join("");area.value=current}
+}
+function renderJobSelect(){
+  const d=data(), list=document.getElementById("jobOptions"), field=document.getElementById("candidateJob");
+  if(!list)return;
+  const activeJobs=Array.isArray(d.jobs)?d.jobs.filter(x=>x.active):[];
+  list.innerHTML=activeJobs.map(x=>`<option value="${esc(x.title)}">${esc(x.city||"Sem cidade")} — ${esc(x.area||"Sem área")}</option>`).join("");
+  if(field){field.disabled=activeJobs.length===0;field.placeholder=activeJobs.length?"Digite para buscar ou selecione uma vaga":"Nenhuma vaga disponível no momento";}
+}
+function goToCandidate(t){selectJob(t);setTimeout(()=>document.getElementById("candidateJob")?.focus(),350);}
+function selectJob(t){
+  const field=document.getElementById("candidateJob");
+  if(field){field.value=t;field.dispatchEvent(new Event("input",{bubbles:true}));}
+  const role=document.querySelector('[name=role]'); if(role)role.value=t;
+  const job=data().jobs.find(j=>String(j.title).trim().toLowerCase()===String(t).trim().toLowerCase()&&j.active);
+  document.getElementById("candidato")?.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function hashSimple(v){let h=0;for(let i=0;i<v.length;i++)h=((h<<5)-h)+v.charCodeAt(i)|0;return String(h)}
+function stageIndex(stage){let d=data();return (d.stages||defaults.stages).indexOf(stage)}
+function stageText(x){return x||"Cadastro recebido"}
+candidateForm.onsubmit=e=>{
+  e.preventDefault();
+  const d=data(), f=new FormData(candidateForm), o=Object.fromEntries(f.entries());
+  const requestedTitle=String(o.jobTitleInput||"").trim();
+  const job=d.jobs.find(j=>String(j.title).trim().toLowerCase()===requestedTitle.toLowerCase() && j.active);
+  if(!job){candidateMsg.textContent="Selecione ou digite exatamente uma das vagas disponíveis."; return}
+  if(d.candidates.some(x=>String(x.email).toLowerCase()===String(o.email).toLowerCase())){candidateMsg.textContent="Este e-mail já possui um acesso de candidato.";return}
+  const id=Date.now();
+  fetch("/api/candidates",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:o.name,phone:o.phone,email:o.email,city:o.city,role:job.title,jobTitle:job.title,jobId:job.id,area:job.area,resume:o.resume?.name||"",experience:o.experience,passwordHash:hashSimple(o.password)})}).then(async r=>{const x=await r.json();if(!r.ok)throw new Error(x.error);candidateForm.reset();candidateMsg.textContent="Cadastro realizado. Use seu e-mail e senha na Área do candidato para acompanhar o processo.";}).catch(e=>candidateMsg.textContent=e.message||"Não foi possível concluir o cadastro.");
+}
+companyForm.onsubmit=e=>{e.preventDefault();let f=new FormData(companyForm),o=Object.fromEntries(f.entries());if(o.password!==o.password2){companyMsg.textContent="As senhas não conferem.";return}fetch("/api/companies",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({company:o.company,contact:o.contact,phone:o.phone,email:o.email,passwordHash:hashSimple(o.password),role:o.role,city:o.city||"",quantity:Number(o.quantity)||1,salary:o.salary||"",requirements:o.requirements||""})}).then(async r=>{const x=await r.json();if(!r.ok)throw new Error(x.error);companyForm.reset();companyMsg.textContent="Solicitação enviada com sucesso. A vaga ficará aguardando a aprovação do administrador antes de aparecer no site."}).catch(e=>companyMsg.textContent=e.message||"Não foi possível enviar a solicitação.")}
+companyLoginForm.onsubmit=async e=>{e.preventDefault();let f=new FormData(companyLoginForm),o=Object.fromEntries(f.entries());try{let r=await fetch("/api/portal/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({type:"company",email:o.email,passwordHash:hashSimple(o.password)})}),x=await r.json();if(!r.ok)throw new Error(x.error);window.__serverData=x.state;companyLoginMsg.textContent="";renderCompanyPortal(x.account)}catch(e){companyLoginMsg.textContent=e.message||"E-mail ou senha incorretos."}}
+candidateLoginForm.onsubmit=async e=>{e.preventDefault();let f=new FormData(candidateLoginForm),o=Object.fromEntries(f.entries());try{let r=await fetch("/api/portal/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({type:"candidate",email:o.email,passwordHash:hashSimple(o.password)})}),x=await r.json();if(!r.ok)throw new Error(x.error);window.__serverData=x.state;candidateLoginMsg.textContent="";renderCandidatePortal(x.account)}catch(e){candidateLoginMsg.textContent=e.message||"E-mail ou senha incorretos."}}
+function renderCompanyPortal(c){let d=data(),jobsC=d.jobs.filter(j=>(c.jobs||[]).map(Number).includes(Number(j.id))),html=`<div class="portalHead"><strong>${esc(c.company)}</strong><button class="btn light" onclick="companyPortal.classList.add('hidden')">Fechar</button></div>`;let msgs=Array.isArray(c.messages)?c.messages:[];if(msgs.length){html+=`<div class="portalCard" style="border:2px solid #1769ff"><h3>💳 Mensagens e cobranças</h3>${msgs.map(m=>`<div class="portalCard" style="margin:10px 0;background:#f7fbff"><p><b>${m.type==='cobranca'?'Cobrança da JasTech':'Mensagem'}</b> • ${formatDate(m.createdAt)}</p><p>${esc(m.text)}</p>${m.amount?`<p><b>Valor:</b> ${moneyBR(m.amount)} ${m.due?`• <b>Vencimento:</b> ${formatDate(m.due)}`:''}</p>`:''}<p><b>Formas de pagamento:</b> ${[m.methods?.pix&&'PIX',m.methods?.credit&&'Cartão de crédito',m.methods?.debit&&'Cartão de débito'].filter(Boolean).join(' • ')||'Consulte a JasTech'}</p>${m.methods?.pix&&m.pixInfo?`<p><b>PIX:</b> ${esc(m.pixInfo)}</p>`:''}${(m.methods?.credit||m.methods?.debit)&&m.cardLink?`<p><a class="btn primary" href="${esc(m.cardLink)}" target="_blank" rel="noopener">💳 Pagar com cartão</a></p>`:''}</div>`).join('')}</div>`}jobsC.forEach(j=>{let cand=d.candidates.filter(x=>Number(x.jobId)===Number(j.id)),finalists=cand.filter(x=>x.stage==="Finalista / encaminhado para entrevista"||x.stage==="Aprovado");html+=`<div class="portalCard"><h4>${esc(j.title)}</h4><p class="muted">${esc(j.processStatus||"Em análise")}</p><div class="miniStats"><span><b>${cand.length}</b> inscritos</span><span><b>${finalists.length}</b> finalistas indicados</span><span><b>${cand.filter(x=>x.stage==="Aprovado").length}</b> aprovados</span></div><p><b>Andamento:</b> ${esc(j.processStatus||"Solicitação recebida")}</p>${finalists.length?`<div><b>Finalistas encaminhados:</b><ul>${finalists.map(x=>`<li>${esc(x.name)} — ${esc(x.role)} (${esc(x.stage)})</li>`).join("")}</ul></div>`:'<p class="muted">Ainda não há finalistas indicados.</p>'}</div>`});companyPortal.innerHTML=html;companyPortal.classList.remove('hidden')}
+function renderCandidatePortal(c){let html=`<div class="portalHead"><strong>Olá, ${esc(c.name)}</strong><button class="btn light" onclick="candidatePortal.classList.add('hidden')">Fechar</button></div><div class="portalCard"><h4>${esc(c.jobTitle||c.role)}</h4><p class="tag">Etapa atual</p><h3>${esc(stageText(c.stage))}</h3><p>${c.feedback?esc(c.feedback):'Seu processo está em acompanhamento pela JasTech. Novas informações aparecerão aqui quando a etapa for atualizada.'}</p></div>`;candidatePortal.innerHTML=html;candidatePortal.classList.remove('hidden')}
+async function syncServer(){try{const r=await fetch("/api/public",{cache:"no-store"});if(!r.ok)return;const remote=await r.json();window.__serverData=remote;applySite();setupJobSearch();renderJobs();}catch(e){console.warn("Servidor indisponível; usando dados locais.",e)}}
+function data(){try{return window.__serverData||JSON.parse(localStorage.getItem(KEY)||"null")||structuredClone(defaults)}catch(e){return structuredClone(defaults)}}
+function save(d){window.__serverData=d;localStorage.setItem(KEY,JSON.stringify(d));Promise.resolve();}
+syncServer();
+setInterval(()=>{if(document.visibilityState==="visible")syncServer()},5000);
+window.addEventListener("storage",e=>{if(e.key===KEY||e.key===OLD_KEY){applySite();renderJobs();}});
+document.addEventListener("visibilitychange",()=>{if(!document.hidden){applySite();renderJobs();}});
+setInterval(()=>{if(!document.hidden)renderJobs();},2000);
+let musicState={list:[],index:0,playing:false,audio:null};
+function getMusicList(){const d=data();return Array.isArray(d.music)?d.music.filter(m=>m.active!==false):[]}
+function renderMusicPlayer(){musicState.list=getMusicList();const box=document.getElementById('siteMusicPlayer');if(!box)return;if(!musicState.list.length){box.classList.add('hidden');return}box.classList.remove('hidden');if(musicState.index>=musicState.list.length)musicState.index=0;const m=musicState.list[musicState.index];document.getElementById('musicNow').textContent=m.title||'Música';document.getElementById('musicType').textContent=m.type==='youtube'?'YouTube':'MP3';document.getElementById('musicPlayBtn').textContent=musicState.playing?'⏸':'▶';const stage=document.getElementById('musicStage');if(musicState.audio){musicState.audio.pause();musicState.audio=null}stage.innerHTML='';if(m.type==='mp3'){const au=document.createElement('audio');au.src=m.src;au.preload='metadata';au.onended=musicNext;au.ontimeupdate=()=>{const p=au.duration?(au.currentTime/au.duration)*100:0;document.getElementById('musicProgressBar').style.width=p+'%'};stage.appendChild(au);musicState.audio=au}else{const iframe=document.createElement('iframe');iframe.src='https://www.youtube.com/embed/'+encodeURIComponent(m.videoId)+'?enablejsapi=1&rel=0';iframe.allow='autoplay; encrypted-media';iframe.title=m.title||'YouTube';stage.appendChild(iframe);document.getElementById('musicProgressBar').style.width='0%'} }
+function musicToggle(){const m=musicState.list[musicState.index];if(!m)return;if(m.type==='mp3'&&musicState.audio){if(musicState.playing)musicState.audio.pause();else musicState.audio.play().catch(()=>{});musicState.playing=!musicState.playing;renderMusicControlsOnly()}else{if(m.type==='youtube'){const iframe=document.querySelector('#musicStage iframe');if(iframe){iframe.contentWindow.postMessage(JSON.stringify({event:'command',func:musicState.playing?'pauseVideo':'playVideo',args:[]}), '*');musicState.playing=!musicState.playing;renderMusicControlsOnly()}}}}
+function renderMusicControlsOnly(){const b=document.getElementById('musicPlayBtn');if(b)b.textContent=musicState.playing?'⏸':'▶'}
+function musicNext(){musicState.playing=false;musicState.index=(musicState.index+1)%musicState.list.length;renderMusicPlayer();musicToggle()}
+function musicPrev(){musicState.playing=false;musicState.index=(musicState.index-1+musicState.list.length)%musicState.list.length;renderMusicPlayer()}
+function initMusic(){musicState.list=getMusicList();if(musicState.list.length)renderMusicPlayer()}
+initMusic();
+setInterval(()=>{const l=getMusicList();if(l.length!==musicState.list.length)renderMusicPlayer()},3000);
+</script>
+</body></html>
